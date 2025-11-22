@@ -1,0 +1,15 @@
+<h2>Lista de tareas</h2>
+
+<app-task-input (tareaCreada)="agregarTarea($event)"></app-task-input>
+
+<div class="task-container">
+  <div class="task-card" *ngFor="let tarea of tareas; let i = index">
+
+    <span class="delete" (click)="eliminarTarea(i)">✖</span>
+
+    <p><strong>{{ tarea.nombre }}</strong></p>
+    <p class="estado-tarea">{{ tarea.estado }}</p>
+    <p class="texto-tarea">{{ tarea.descripcion }}</p>
+
+  </div>
+</div>
